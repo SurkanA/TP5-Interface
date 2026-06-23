@@ -1,20 +1,25 @@
-<header class="header">
-  <div class="logo-area" (click)="onNavigate('landing')" style="cursor: pointer">
+<header
+  class="header navbar navbar-expand-md sticky-top px-4 py-3 border-bottom justify-content-between align-items-center"
+>
+  <div
+    class="logo-area navbar-brand d-flex align-items-center gap-2 m-0 cursor-pointer"
+    style="cursor: pointer"
+  >
     <img
       src="images/logo.png"
       alt="Logo del Instituto Superior de Formación Docente y Técnica N° 70 Manuel Belgrano"
       class="logo-img"
     />
   </div>
-  <nav class="nav-links">
-    <a href="javascript:void(0)" (click)="onNavigate('landing')">Inicio</a>
-    <a href="javascript:void(0)" (click)="onNavigate('news')">Noticias</a>
-    <a href="javascript:void(0)" (click)="onNavigate('history')">Trayectoria</a>
-    <a href="javascript:void(0)" (click)="onNavigate('careers')">Carreras</a>
+  <nav class="nav-links d-none d-md-flex gap-4 align-items-center">
+    <a href="javascript:void(0)" class="nav-link fw-semibold px-0">Inicio</a>
+    <a href="javascript:void(0)" class="nav-link fw-semibold px-0">Noticias</a>
+    <a href="javascript:void(0)" class="nav-link fw-semibold px-0">Trayectoria</a>
+    <a href="javascript:void(0)" class="nav-link fw-semibold px-0">Carreras</a>
   </nav>
-  <div class="header-actions">
-    <button class="btn btn-outline" (click)="onNavigate('login')">Acceder</button>
-    <button class="hamburger-btn" (click)="toggleMenu()">
+  <div class="header-actions d-flex align-items-center gap-3">
+    <button class="btn btn-outline-primary fw-semibold">Acceder</button>
+    <button class="hamburger-btn btn border-0 p-2 d-md-none d-block" (click)="toggleMenu()">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -34,9 +39,12 @@
   </div>
 </header>
 
-<div class="mobile-menu-overlay" [class.open]="menuOpen()">
-  <div class="mobile-menu-header">
-    <div class="logo-area" (click)="onNavigate('landing'); toggleMenu()" style="cursor: pointer">
+<div class="mobile-menu-overlay d-flex flex-column" [class.open]="menuOpen()">
+  <div class="mobile-menu-header d-flex justify-content-between align-items-center mb-4">
+    <div
+      class="logo-area navbar-brand d-flex align-items-center gap-2 m-0 cursor-pointer"
+      style="cursor: pointer"
+    >
       <img
         src="images/logo.png"
         alt="I.S.F.D. y T. N 70 Logo"
@@ -44,7 +52,7 @@
         style="height: 35px"
       />
     </div>
-    <button class="close-btn" (click)="toggleMenu()">
+    <button class="close-btn btn border-0 p-2" (click)="toggleMenu()">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -61,18 +69,12 @@
       </svg>
     </button>
   </div>
-  <div class="mobile-menu-links">
-    <a href="javascript:void(0)" (click)="onNavigate('landing'); toggleMenu()">Inicio</a>
-    <a href="javascript:void(0)" (click)="onNavigate('news'); toggleMenu()">Noticias</a>
-    <a href="javascript:void(0)" (click)="onNavigate('history'); toggleMenu()">Trayectoria</a>
-    <a href="javascript:void(0)" (click)="onNavigate('careers'); toggleMenu()">Carreras</a>
-    <div class="mobile-menu-divider"></div>
-    <button
-      class="btn btn-primary"
-      style="width: 100%; margin-top: 1rem"
-      (click)="onNavigate('login'); toggleMenu()"
-    >
-      Iniciar Sesión
-    </button>
+  <div class="mobile-menu-links d-flex flex-column gap-3">
+    <a href="javascript:void(0)" class="nav-link fs-4 fw-semibold">Inicio</a>
+    <a href="javascript:void(0)" class="nav-link fs-4 fw-semibold">Noticias</a>
+    <a href="javascript:void(0)" class="nav-link fs-4 fw-semibold">Trayectoria</a>
+    <a href="javascript:void(0)" class="nav-link fs-4 fw-semibold">Carreras</a>
+    <hr class="my-3 text-secondary-50" />
+    <button class="btn btn-primary w-100 fw-semibold py-2 mt-3">Iniciar Sesión</button>
   </div>
 </div>
