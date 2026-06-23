@@ -1,1 +1,58 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+:root {
+  --primary: #6d9982;
+  --primary-rgb: 109, 153, 130;
+  --primary-hover: #59806c;
+  --primary-light: #eaf1ed;
+  --primary-dark: #2c4437;
+  --bg-main: #f8faf9;
+  --bg-card: #ffffff;
+  --text-main: #2b3531;
+  --text-muted: #62726b;
+  --border-color: #e2e8e5;
+  --shadow-sm: 0 2px 8px rgba(109, 153, 130, 0.08);
+  --shadow-md: 0 8px 24px rgba(109, 153, 130, 0.12);
+  --shadow-lg: 0 16px 40px rgba(109, 153, 130, 0.16);
+  --font-sans: 'Inter', -apple-system, sans-serif;
+  --font-display: 'Outfit', sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.25;
+}
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: var(--primary-hover);
+}

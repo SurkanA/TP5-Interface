@@ -1,1 +1,78 @@
-<p>header-general works!</p>
+<header class="header">
+  <div class="logo-area" (click)="onNavigate('landing')" style="cursor: pointer">
+    <img
+      src="images/logo.png"
+      alt="Logo del Instituto Superior de Formación Docente y Técnica N° 70 Manuel Belgrano"
+      class="logo-img"
+    />
+  </div>
+  <nav class="nav-links">
+    <a href="javascript:void(0)" (click)="onNavigate('landing')">Inicio</a>
+    <a href="javascript:void(0)" (click)="onNavigate('news')">Noticias</a>
+    <a href="javascript:void(0)" (click)="onNavigate('history')">Trayectoria</a>
+    <a href="javascript:void(0)" (click)="onNavigate('careers')">Carreras</a>
+  </nav>
+  <div class="header-actions">
+    <button class="btn btn-outline" (click)="onNavigate('login')">Acceder</button>
+    <button class="hamburger-btn" (click)="toggleMenu()">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="4" x2="20" y1="12" y2="12" />
+        <line x1="4" x2="20" y1="6" y2="6" />
+        <line x1="4" x2="20" y1="18" y2="18" />
+      </svg>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu-overlay" [class.open]="menuOpen()">
+  <div class="mobile-menu-header">
+    <div class="logo-area" (click)="onNavigate('landing'); toggleMenu()" style="cursor: pointer">
+      <img
+        src="images/logo.png"
+        alt="I.S.F.D. y T. N 70 Logo"
+        class="logo-img"
+        style="height: 35px"
+      />
+    </div>
+    <button class="close-btn" (click)="toggleMenu()">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="18" x2="6" y1="6" y2="18" />
+        <line x1="6" x2="18" y1="6" y2="18" />
+      </svg>
+    </button>
+  </div>
+  <div class="mobile-menu-links">
+    <a href="javascript:void(0)" (click)="onNavigate('landing'); toggleMenu()">Inicio</a>
+    <a href="javascript:void(0)" (click)="onNavigate('news'); toggleMenu()">Noticias</a>
+    <a href="javascript:void(0)" (click)="onNavigate('history'); toggleMenu()">Trayectoria</a>
+    <a href="javascript:void(0)" (click)="onNavigate('careers'); toggleMenu()">Carreras</a>
+    <div class="mobile-menu-divider"></div>
+    <button
+      class="btn btn-primary"
+      style="width: 100%; margin-top: 1rem"
+      (click)="onNavigate('login'); toggleMenu()"
+    >
+      Iniciar Sesión
+    </button>
+  </div>
+</div>
