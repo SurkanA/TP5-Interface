@@ -3,6 +3,10 @@
   backdrop-filter: blur(10px);
 }
 
+.logo-area {
+  cursor: pointer;
+}
+
 .logo-img {
   height: 45px;
   object-fit: contain;
@@ -64,4 +68,3 @@
 .mobile-menu-links a.active {
   color: var(--primary) !important;
 }
-
