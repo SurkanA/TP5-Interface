@@ -7,6 +7,10 @@
   padding-bottom: 2rem;
 }
 
+.footer-brand h6 {
+  color: #dfede5;
+}
+
 .footer-top {
   max-width: 1200px;
   margin-inline: auto;
@@ -37,7 +41,10 @@
   color: #9abfa9;
   font-size: 0.9rem;
   text-decoration: none;
-  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
 }
 
 .social-icon:hover {
