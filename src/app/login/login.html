@@ -1,19 +1,28 @@
-<div class="login-page">
-  <div class="login-card">
-    <div class="login-logo">
-      <img src="images/logo.png" alt="I.S.F.D. y T. N° 70 Manuel Belgrano" class="logo-img" />
+<div class="login-page d-flex align-items-center justify-content-center min-vh-100 px-3 py-4">
+  <div class="card login-card w-100 border p-4 p-sm-5 shadow-sm">
+    <div class="login-logo d-flex justify-content-center mb-4">
+      <img
+        src="images/logo.png"
+        alt="I.S.F.D. y T. N° 70 Manuel Belgrano"
+        class="logo-img img-fluid"
+        style="height: 56px; object-fit: contain"
+      />
     </div>
 
-    <div class="login-heading">
-      <h1>Acceder</h1>
-      <p class="login-subtitle">Panel de administración del instituto</p>
+    <div class="login-heading text-center mb-4">
+      <h1 class="h3 fw-bold mb-1">Acceder</h1>
+      <p class="text-muted small mb-0">Panel de administración del instituto</p>
     </div>
 
-    <form (ngSubmit)="onSubmit()" #loginForm="ngForm" novalidate>
-      <div class="field-group">
-        <label for="username" class="field-label">Usuario</label>
-        <div class="input-wrapper">
-          <span class="input-icon">
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm" novalidate class="d-flex flex-column gap-3">
+      <div class="field-group d-flex flex-column gap-1">
+        <label
+          for="username"
+          class="form-label text-muted fw-bold text-uppercase small tracking-wider mb-1"
+          >Usuario</label
+        >
+        <div class="input-group">
+          <span class="input-group-text bg-light text-muted border-end-0">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -32,8 +41,8 @@
           <input
             id="username"
             type="text"
-            class="field-input"
-            [class.field-input--error]="error()"
+            class="form-control"
+            [class.is-invalid]="error()"
             placeholder="Ingresá tu usuario"
             [(ngModel)]="username"
             name="username"
@@ -43,10 +52,14 @@
         </div>
       </div>
 
-      <div class="field-group">
-        <label for="password" class="field-label">Contraseña</label>
-        <div class="input-wrapper">
-          <span class="input-icon">
+      <div class="field-group d-flex flex-column gap-1">
+        <label
+          for="password"
+          class="form-label text-muted fw-bold text-uppercase small tracking-wider mb-1"
+          >Contraseña</label
+        >
+        <div class="input-group">
+          <span class="input-group-text bg-light text-muted border-end-0">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -65,8 +78,8 @@
           <input
             id="password"
             [type]="showPassword() ? 'text' : 'password'"
-            class="field-input field-input--password"
-            [class.field-input--error]="error()"
+            class="form-control border-end-0"
+            [class.is-invalid]="error()"
             placeholder="Ingresá tu contraseña"
             [(ngModel)]="password"
             name="password"
@@ -74,7 +87,7 @@
           />
           <button
             type="button"
-            class="toggle-password"
+            class="btn btn-outline-secondary border-start-0 text-muted"
             (click)="togglePassword()"
             [attr.aria-label]="showPassword() ? 'Ocultar contraseña' : 'Mostrar contraseña'"
           >
@@ -117,7 +130,10 @@
       </div>
 
       @if (error()) {
-        <div class="error-banner" role="alert">
+        <div
+          class="alert alert-danger d-flex align-items-center gap-2 py-2 px-3 error-shake"
+          role="alert"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="15"
@@ -128,18 +144,23 @@
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
+            class="flex-shrink-0"
           >
             <circle cx="12" cy="12" r="10" />
             <line x1="12" y1="8" x2="12" y2="12" />
             <line x1="12" y1="16" x2="12.01" y2="16" />
           </svg>
-          {{ error() }}
+          <div>{{ error() }}</div>
         </div>
       }
 
-      <button type="submit" class="submit-btn" [disabled]="loading()">
+      <button
+        type="submit"
+        class="btn btn-primary w-100 fw-bold py-2 mt-2 d-flex align-items-center justify-content-center gap-2"
+        [disabled]="loading()"
+      >
         @if (loading()) {
-          <span class="spinner"></span>
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
           Verificando…
         } @else {
           Ingresar
@@ -147,6 +168,8 @@
       </button>
     </form>
 
-    <p class="login-footer-note">I.S.F.D. y T. N° 70 &mdash; Solo acceso autorizado</p>
+    <p class="text-center text-muted small mt-4 mb-0 opacity-75">
+      I.S.F.D. y T. N° 70 &mdash; Solo acceso autorizado
+    </p>
   </div>
 </div>
