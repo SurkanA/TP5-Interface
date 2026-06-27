@@ -59,7 +59,7 @@
           >Contraseña</label
         >
         <div class="input-group">
-          <span class="input-group-text bg-light text-muted border-end-0">
+          <span class="input-group-text bg-light text-muted">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -75,38 +75,25 @@
               <path d="M7 11V7a5 5 0 0 1 10 0v4" />
             </svg>
           </span>
+
           <input
             id="password"
             [type]="showPassword() ? 'text' : 'password'"
-            class="form-control border-end-0"
+            class="form-control"
             [class.is-invalid]="error()"
             placeholder="Ingresá tu contraseña"
             [(ngModel)]="password"
             name="password"
             autocomplete="current-password"
           />
+
           <button
             type="button"
-            class="btn btn-outline-secondary border-start-0 text-muted"
+            class="btn btn-outline-secondary bg-light text-muted px-3"
             (click)="togglePassword()"
-            [attr.aria-label]="showPassword() ? 'Ocultar contraseña' : 'Mostrar contraseña'"
+            [attr.aria-label]="showPassword() ? 'Mostrar contraseña' : 'Ocultar contraseña'"
           >
             @if (!showPassword()) {
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                <circle cx="12" cy="12" r="3" />
-              </svg>
-            } @else {
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -123,6 +110,21 @@
                 />
                 <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19" />
                 <line x1="1" y1="1" x2="23" y2="23" />
+              </svg>
+            } @else {
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                <circle cx="12" cy="12" r="3" />
               </svg>
             }
           </button>

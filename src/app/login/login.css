@@ -31,11 +31,6 @@
   box-shadow: 0 0 0 3px rgba(109, 153, 130, 0.15);
 }
 
-.input-group:focus-within .input-group-text {
-  color: var(--primary) !important;
-  border-color: var(--primary);
-}
-
 .error-shake {
   animation: shake 0.3s ease;
 }
