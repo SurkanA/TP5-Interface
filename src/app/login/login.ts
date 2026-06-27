@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
-export class LoginComponent {
+export class Login {
   username = '';
   password = '';
   showPassword = signal(false);
@@ -33,7 +33,6 @@ export class LoginComponent {
 
     this.loading.set(true);
 
-    // Simulate a brief async check
     setTimeout(() => {
       if (this.username === 'admin' && this.password === 'admin') {
         this.router.navigate(['/']);

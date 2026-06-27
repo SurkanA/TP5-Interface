@@ -1,11 +1,9 @@
-/* ── Page shell ── */
 .login-page {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--bg-main);
-  /* Subtle radial bloom from the primary colour */
   background-image: radial-gradient(
     ellipse 70% 55% at 50% 0%,
     rgba(109, 153, 130, 0.13) 0%,
@@ -14,7 +12,6 @@
   padding: 2rem 1rem;
 }
 
-/* ── Card ── */
 .login-card {
   width: 100%;
   max-width: 420px;
@@ -28,7 +25,6 @@
   gap: 1.75rem;
 }
 
-/* ── Logo ── */
 .login-logo {
   display: flex;
   justify-content: center;
@@ -39,7 +35,6 @@
   object-fit: contain;
 }
 
-/* ── Heading ── */
 .login-heading {
   text-align: center;
 }
@@ -58,7 +53,6 @@
   margin: 0;
 }
 
-/* ── Form ── */
 form {
   display: flex;
   flex-direction: column;
@@ -79,7 +73,6 @@ form {
   text-transform: uppercase;
 }
 
-/* ── Input wrapper (icon + input + optional toggle) ── */
 .input-wrapper {
   position: relative;
   display: flex;
@@ -130,7 +123,6 @@ form {
   box-shadow: 0 0 0 3px rgba(217, 83, 79, 0.12);
 }
 
-/* ── Show/hide password toggle ── */
 .toggle-password {
   position: absolute;
   right: 0.75rem;
@@ -148,7 +140,6 @@ form {
   color: var(--primary);
 }
 
-/* ── Error banner ── */
 .error-banner {
   display: flex;
   align-items: center;
@@ -175,7 +166,6 @@ form {
   }
 }
 
-/* ── Submit button ── */
 .submit-btn {
   width: 100%;
   padding: 0.8rem 1rem;
@@ -214,7 +204,6 @@ form {
   cursor: not-allowed;
 }
 
-/* ── Loading spinner ── */
 .spinner {
   width: 16px;
   height: 16px;
@@ -230,7 +219,6 @@ form {
   }
 }
 
-/* ── Footer note ── */
 .login-footer-note {
   text-align: center;
   font-size: 0.8rem;
@@ -239,7 +227,6 @@ form {
   opacity: 0.75;
 }
 
-/* ── Responsive ── */
 @media (max-width: 480px) {
   .login-card {
     padding: 2rem 1.5rem 1.75rem;
