@@ -1,11 +1,3 @@
-:root {
-  --bg-main: #f8f9fa;
-  --bg-card: #ffffff;
-  --border-color: #dee2e6;
-  --radius-lg: 0.5rem;
-  --primary: #6d9982;
-}
-
 .login-page {
   background: var(--bg-main);
   background-image: radial-gradient(

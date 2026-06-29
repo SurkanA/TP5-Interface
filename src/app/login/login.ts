@@ -27,7 +27,7 @@ export class Login {
     this.error.set('');
 
     if (!this.username || !this.password) {
-      this.error.set('Completá todos los campos.');
+      this.error.set('Complete todos los campos.');
       return;
     }
 
