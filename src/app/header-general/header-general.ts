@@ -4,10 +4,10 @@ import { Component, input, output, signal } from '@angular/core';
   selector: 'app-header-general',
   imports: [],
   standalone: true,
-  templateUrl: './app-header.html',
-  styleUrl: './app-header.css',
+  templateUrl: './header-general.html',
+  styleUrl: './header-general.css',
 })
-export class HeaderComponent {
+export class HeaderGeneral {
   currentView = input.required<string>();
   navigate = output<string>();
   menuOpen = signal(false);
