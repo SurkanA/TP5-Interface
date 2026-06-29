@@ -24,10 +24,12 @@
   height: 45px;
   object-fit: contain;
   transition: transform 0.2s ease;
+  transform: scale(2);
+  transform-origin: left center;
 }
 
 .logo-img:hover {
-  transform: scale(1.02);
+  transform: scale(2.5);
 }
 
 .nav-links a {
