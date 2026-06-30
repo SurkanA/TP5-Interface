@@ -18,5 +18,6 @@ export class HeaderGeneral {
 
   onNavigate(view: string) {
     this.navigate.emit(view);
+    this.menuOpen.set(false);
   }
 }
