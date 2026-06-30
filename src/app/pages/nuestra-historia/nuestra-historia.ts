@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Timeline } from '../../timeline/timeline';
+import { Timeline } from '../../components/timeline/timeline';
 
 @Component({
   selector: 'app-nuestra-historia',
