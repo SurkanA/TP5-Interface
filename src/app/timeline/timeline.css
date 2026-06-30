@@ -1,0 +1,112 @@
+.timeline-container {
+  padding: 1.5rem 0;
+  --axis-offset: 98px;
+}
+
+@media (min-width: 768px) {
+  .timeline-container {
+    --axis-offset: 136px;
+  }
+}
+
+.timeline-item {
+  min-height: 108px;
+}
+
+.timeline-line-bg,
+.timeline-line-fill {
+  position: absolute;
+  top: 0;
+  right: calc(var(--axis-offset) - 1px);
+  width: 2px;
+}
+
+.timeline-line-bg {
+  bottom: 0;
+  background-color: var(--border-color);
+  z-index: 0;
+}
+
+.timeline-line-fill {
+  height: 0;
+  background-color: var(--primary);
+  z-index: 1;
+}
+
+.timeline-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.75rem;
+  transform-origin: right center;
+  transition: transform 0.2s ease, margin 0.2s ease, box-shadow 0.2s ease,
+  border-color 0.2s ease;
+}
+
+.timeline-card-active {
+  transform: scale(1.1);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+  margin-top: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.timeline-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin: 0 0 0.4rem 0;
+}
+
+.timeline-text {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.timeline-axis {
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--bg-card);
+  border: 3px solid var(--border-color);
+  box-shadow: 0 0 0 2px var(--border-color);
+  z-index: 2;
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.timeline-dot-active {
+  background-color: var(--primary);
+  border-color: var(--bg-main);
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.timeline-date {
+  width: 80px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--primary-dark);
+}
+
+@media (min-width: 768px) {
+  .timeline-date {
+    width: 110px;
+    font-size: 0.9rem;
+  }
+
+  .timeline-card {
+    padding: 1.25rem 1.5rem;
+  }
+}
