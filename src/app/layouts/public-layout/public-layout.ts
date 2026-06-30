@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
-import { HeaderGeneral } from '../../../components/header-general/header-general';
+import { HeaderGeneral } from '../../components/header-general/header-general';
 import { FooterComponent } from '../../components/app-footer/app-footer';
 import { filter } from 'rxjs';
 
