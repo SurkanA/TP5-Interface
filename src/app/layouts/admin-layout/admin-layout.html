@@ -1,0 +1,7 @@
+<app-header-general
+  [currentView]="currentView()"
+  (navigate)="router.navigateByUrl('/' + $event)"
+></app-header-general>
+<main>
+  <router-outlet></router-outlet>
+</main>

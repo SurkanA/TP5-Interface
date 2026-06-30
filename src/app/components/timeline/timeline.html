@@ -1,0 +1,28 @@
+<div class="container-fluid px-3 px-lg-4">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-7">
+      <div class="timeline-container position-relative">
+        <span class="timeline-line-bg" #lineBg></span>
+        <span class="timeline-line-fill" #lineFill></span>
+
+        <div
+          class="timeline-item d-flex align-items-center position-relative"
+          *ngFor="let event of events"
+        >
+          <div class="timeline-card flex-grow-1 me-2 me-md-3" #cardRef>
+            <h3 class="timeline-title mb-2">{{ event.titulo }}</h3>
+            <p class="timeline-text mb-0">{{ event.texto }}</p>
+          </div>
+
+          <div class="timeline-axis flex-shrink-0">
+            <span class="timeline-dot" #dotRef></span>
+          </div>
+
+          <div class="timeline-date flex-shrink-0 ms-2 ms-md-3">
+            {{ event.fecha }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
