@@ -1,0 +1,50 @@
+.hero-img {
+  margin-top: 20px;
+  display: block;
+  max-height: 480px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.news-content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-main);
+}
+
+.news-content p {
+  margin-bottom: 1.5rem;
+}
+
+.badge {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.error-state {
+  min-height: 60vh;
+  color: var(--text-main);
+}
+
+.error-icon {
+  font-size: 3rem;
+  color: var(--primary);
+}
+
+.card-nav-link {
+  background-color: var(--bs-body-bg, #fff);
+  color: var(--bs-body-color, #212529);
+  transition: all 0.2s ease-in-out;
+}
+
+.card-nav-link:hover {
+  background-color: var(--bs-light, #f8f9fa);
+  border-color: var(--primary) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.news-nav-title {
+  font-weight: 600;
+  color: var(--primary);
+}
