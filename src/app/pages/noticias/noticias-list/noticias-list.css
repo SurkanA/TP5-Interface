@@ -94,4 +94,8 @@
     left: 140px;
     top: 24px;
   }
+
+  .search-dropdown {
+    left: -100px;
+  }
 }
