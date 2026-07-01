@@ -1,6 +1,6 @@
 .header-search-container {
   position: fixed;
-  top: 24px;
+  top: 25px;
   right: 130px;
   z-index: 1040;
 }
@@ -21,15 +21,46 @@
   border-color: #6d9982;
 }
 
-.search-dropdown {
-  position: absolute;
-  top: 46px;
-  right: 0;
-  width: 280px;
-  z-index: 1050;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+.search-bar-container {
+  position: relative;
+  border-radius: 20px;
+  margin: -1rem auto 1.5rem auto;
+  max-width: 800px;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-color);
+}
+
+.search-separator {
+  width: 60%;
+  max-width: 500px;
+  height: 1px;
+  background-color: var(--border-color);
+  margin: -2rem auto 2rem auto;
+}
+
+.search-input-group {
+  max-width: 800px;
+}
+
+.search-input {
+  border-color: var(--border-color);
+}
+
+.search-input:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 0.25rem rgba(109, 153, 130, 0.25) !important;
+}
+
+.search-submit-btn {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: white !important;
+}
+
+.search-submit-btn:hover {
+  background-color: var(--primary-hover) !important;
+  border-color: var(--primary-hover) !important;
 }
 
 .news-card {
@@ -91,11 +122,11 @@
 
 @media (max-width: 767.98px) {
   .header-search-container {
-    left: 140px;
-    top: 24px;
+    right: 185px;
+    top: 25px;
   }
 
-  .search-dropdown {
-    left: -100px;
+  .search-bar-container {
+    margin: -1rem 1rem 2rem 1rem;
   }
 }
