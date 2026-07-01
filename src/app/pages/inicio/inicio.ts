@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { Banner } from '../../components/banner/banner';
+import { CareerCarrousel } from '../../career-carousel/career-carousel';
 
 @Component({
   selector: 'app-inicio',
-  imports: [Banner],
+  imports: [Banner, CareerCarrousel],
   templateUrl: './inicio.html',
   styleUrl: './inicio.css',
 })

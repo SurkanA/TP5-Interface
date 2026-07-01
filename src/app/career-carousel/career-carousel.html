@@ -1,0 +1,44 @@
+<section class="careers-carousel">
+  <img
+    [src]="currentCareer.imageUrl"
+    [alt]="currentCareer.title"
+    class="carousel-img"
+  />
+
+  <div class="carousel-overlay"></div>
+
+  <button class="nav-btn nav-btn--prev" (click)="prev()" aria-label="Anterior">
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
+  <button class="nav-btn nav-btn--next" (click)="next()" aria-label="Siguiente">
+    <i class="fa-solid fa-chevron-right"></i>
+  </button>
+
+  <div class="carousel-content d-flex flex-column h-100 px-5">
+    <div class="flex-grow-1 d-flex flex-column justify-content-end">
+      <div class="row w-100 m-0">
+
+        <div class="col-12 col-md-7 col-lg-5 px-4 px-md-5 pb-4 pb-md-5">
+          <h2 class="carousel-title mb-3">{{ currentCareer.title }}</h2>
+          <p class="carousel-body mb-4">{{ currentCareer.description }}</p>
+          <div class="d-flex align-items-center gap-2">
+            <button
+              *ngFor="let career of careers; let i = index"
+              class="indicator-dot"
+              [class.active]="i === currentIndex"
+              (click)="goTo(i)"
+              [attr.aria-label]="'Ir a ' + career.title"
+            ></button>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-5 col-lg-7 d-flex align-items-end justify-content-end px-4 px-md-5 pb-4 pb-md-5">
+          <a [routerLink]="currentCareer.route" class="btn-carousel">
+            Ver más <i class="fa-solid fa-arrow-right btn-arrow"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
