@@ -1,4 +1,5 @@
-import { Component, input, output, signal } from '@angular/core';
+import { Component, input, output, signal, inject } from '@angular/core';
+import { Auth } from '../../services/auth';
 
 @Component({
   selector: 'app-header-general',
@@ -12,6 +13,8 @@ export class HeaderGeneral {
   navigate = output<string>();
   menuOpen = signal(false);
 
+  auth = inject(Auth);
+
   toggleMenu() {
     this.menuOpen.update((v) => !v);
   }
@@ -19,5 +22,10 @@ export class HeaderGeneral {
   onNavigate(view: string) {
     this.navigate.emit(view);
     this.menuOpen.set(false);
+  }
+
+  onLogout() {
+    this.auth.logout();
+    this.onNavigate('inicio');
   }
 }

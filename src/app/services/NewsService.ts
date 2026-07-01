@@ -187,6 +187,13 @@ export class NewsService {
     },
   ];
 
+  add(item: News): void {
+    this.news.unshift(item);
+  }
+  delete(id: string): void {
+    this.news = this.news.filter((n) => n.id !== id);
+  }
+
   getAll(): News[] {
     return this.news;
   }

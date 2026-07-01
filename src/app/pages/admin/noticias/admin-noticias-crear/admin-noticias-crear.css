@@ -1,0 +1,68 @@
+.page-title {
+  color: #6d9982;
+}
+
+.editor-wrapper {
+  background-color: white;
+  border-color: #dee2e6 !important;
+}
+
+.ql-toolbar.ql-snow {
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: 1px solid #dee2e6 !important;
+}
+
+.ql-container.ql-snow {
+  border: none !important;
+}
+
+.drag-drop-zone {
+  border-color: #dee2e6 !important;
+  background-color: #f8faf9;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+}
+
+.drag-drop-zone.drag-over {
+  border-color: #6d9982 !important;
+  background-color: #eaf1ed;
+  transform: scale(1.02);
+}
+
+.hover-opacity-100 {
+  transition: opacity 0.2s ease;
+}
+
+.drag-drop-zone:hover .hover-opacity-100 {
+  opacity: 1 !important;
+}
+
+.transition-all {
+  transition: all 0.2s ease-in-out;
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}
+
+.btn-primary {
+  background-color: #6d9982 !important;
+  border-color: #6d9982 !important;
+}
+
+.btn-primary:hover {
+  background-color: #5c826e !important;
+  border-color: #5c826e !important;
+}
+
+.btn-outline-primary {
+  color: #6d9982 !important;
+  border-color: #6d9982 !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: #6d9982 !important;
+  color: white !important;
+}

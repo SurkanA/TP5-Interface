@@ -1,7 +1,8 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Auth } from '../../../services/auth';
 
 @Component({
   selector: 'app-login',
@@ -11,13 +12,14 @@ import { CommonModule } from '@angular/common';
   styleUrl: './login.css',
 })
 export class Login {
+  private auth = inject(Auth);
+  private router = inject(Router);
+
   username = '';
   password = '';
   showPassword = signal(false);
   error = signal('');
   loading = signal(false);
-
-  constructor(private router: Router) {}
 
   togglePassword() {
     this.showPassword.update((v) => !v);
@@ -34,8 +36,9 @@ export class Login {
     this.loading.set(true);
 
     setTimeout(() => {
-      if (this.username === 'admin' && this.password === 'admin') {
-        this.router.navigate(['/']);
+      const ok = this.auth.login(this.username, this.password);
+      if (ok) {
+        this.router.navigate(['/admin/noticias']);
       } else {
         this.error.set('Usuario o contraseña incorrectos.');
         this.loading.set(false);
