@@ -14,9 +14,61 @@
       </div>
     </div>
 
-    <div class="row g-4">
-      <div class="col-12 col-lg-8">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-9">
         <div class="card border-0 shadow-sm p-4 rounded-3">
+          <!-- 1. Imagen de Portada -->
+          <div class="mb-4">
+            <label class="form-label fw-semibold mb-3">Imagen de Portada</label>
+            <div
+              class="drag-drop-zone d-flex flex-column align-items-center justify-content-center border border-2 border-dashed rounded-3 p-4 position-relative"
+              [class.drag-over]="isDragOver()"
+              (dragover)="onDragOver($event)"
+              (dragleave)="onDragLeave($event)"
+              (drop)="onDrop($event)"
+              (click)="fileInput.click()"
+              style="cursor: pointer; min-height: 250px"
+            >
+              <input
+                type="file"
+                #fileInput
+                class="d-none"
+                accept="image/*"
+                (change)="onFileSelected($event)"
+              />
+
+              @if (imagePreview()) {
+                <img
+                  [src]="imagePreview()"
+                  class="img-fluid w-100 h-100 object-fit-cover rounded-3 position-absolute top-0 start-0"
+                  alt="Vista previa de portada"
+                />
+                <div
+                  class="image-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center rounded-3 bg-dark bg-opacity-50 opacity-0 hover-opacity-100 transition-all"
+                >
+                  <span class="text-white fw-bold"
+                    ><i class="fa-solid fa-rotate me-1"></i> Cambiar imagen</span
+                  >
+                </div>
+              } @else {
+                <div class="d-flex flex-column align-items-center text-muted">
+                  <i class="fa-solid fa-cloud-arrow-up fs-1 mb-3 text-primary"></i>
+                  
+                  <!-- Vista Escritorio -->
+                  <h5 class="h6 mb-1 text-dark fw-semibold d-none d-md-block">Arrastre una imagen aquí</h5>
+                  <p class="small mb-0 d-none d-md-block">o haga clic para explorar archivos</p>
+                  
+                  <!-- Vista Móvil -->
+                  <h5 class="h6 mb-1 text-dark fw-semibold d-md-none">Seleccione una imagen</h5>
+                  <p class="small mb-0 d-md-none">toque para explorar sus archivos</p>
+                  
+                  <small class="text-muted mt-2">Formatos recomendados: JPG, PNG (máx. 2MB)</small>
+                </div>
+              }
+            </div>
+          </div>
+
+          <!-- 2. Título de la Noticia -->
           <div class="mb-4">
             <label for="news-title" class="form-label fw-semibold">Título de la Noticia</label>
             <input
@@ -29,6 +81,7 @@
             />
           </div>
 
+          <!-- 3. Etiquetas -->
           <div class="mb-4">
             <label for="news-tags" class="form-label fw-semibold"
               >Etiquetas (separadas por coma)</label
@@ -42,6 +95,7 @@
             />
           </div>
 
+          <!-- 4. Contenido (Editor) -->
           <div class="mb-4">
             <label class="form-label fw-semibold">Contenido</label>
             <div class="editor-wrapper border rounded-3 overflow-hidden">
@@ -49,6 +103,7 @@
             </div>
           </div>
 
+          <!-- 5. Botones -->
           <div class="d-flex gap-2 justify-content-end">
             <a routerLink="/admin/noticias" class="btn btn-outline-secondary px-4 py-2 fw-semibold"
               >Cancelar</a
@@ -59,52 +114,6 @@
             >
               <i class="fa-solid fa-newspaper"></i> Publicar noticia
             </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-lg-4">
-        <div class="card border-0 shadow-sm p-4 rounded-3 text-center h-100 d-flex flex-column">
-          <label class="form-label fw-semibold text-start mb-3">Imagen de Portada</label>
-
-          <div
-            class="drag-drop-zone flex-grow-1 d-flex flex-column align-items-center justify-content-center border border-2 border-dashed rounded-3 p-4 position-relative"
-            [class.drag-over]="isDragOver()"
-            (dragover)="onDragOver($event)"
-            (dragleave)="onDragLeave($event)"
-            (drop)="onDrop($event)"
-            (click)="fileInput.click()"
-            style="cursor: pointer; min-height: 250px"
-          >
-            <input
-              type="file"
-              #fileInput
-              class="d-none"
-              accept="image/*"
-              (change)="onFileSelected($event)"
-            />
-
-            @if (imagePreview()) {
-              <img
-                [src]="imagePreview()"
-                class="img-fluid w-100 h-100 object-fit-cover rounded-3 position-absolute top-0 start-0"
-                alt="Vista previa de portada"
-              />
-              <div
-                class="image-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center rounded-3 bg-dark bg-opacity-50 opacity-0 hover-opacity-100 transition-all"
-              >
-                <span class="text-white fw-bold"
-                  ><i class="fa-solid fa-rotate me-1"></i> Cambiar imagen</span
-                >
-              </div>
-            } @else {
-              <div class="d-flex flex-column align-items-center text-muted">
-                <i class="fa-solid fa-cloud-arrow-up fs-1 mb-3 text-primary"></i>
-                <h5 class="h6 mb-1 text-dark fw-semibold">Arrastre una imagen aquí</h5>
-                <p class="small mb-0">o haga clic para explorar archivos</p>
-                <small class="text-muted mt-2">Formatos recomendados: JPG, PNG (máx. 2MB)</small>
-              </div>
-            }
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@ import Quill from 'quill';
 @Component({
   selector: 'app-admin-noticias-crear',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './admin-noticias-crear.html',
   styleUrl: './admin-noticias-crear.css',
 })
