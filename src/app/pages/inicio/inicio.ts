@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Banner } from '../../components/banner/banner';
-import { CareerCarrousel } from '../../career-carousel/career-carousel';
+import { CareerCarrousel } from '../../components/career-carousel/career-carousel';
 
 @Component({
   selector: 'app-inicio',

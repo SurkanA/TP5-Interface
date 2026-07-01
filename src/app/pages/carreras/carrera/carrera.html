@@ -1,1 +1,60 @@
-<p>carrera works!</p>
+@if (career(); as c) {
+  <div class="career-page">
+
+    <div class="container-fluid px-0">
+      <div class="row justify-content-center g-0">
+        <div class="col-12 col-lg-7">
+          <img [src]="c.imageUrl" [alt]="c.title" class="img-fluid w-100 hero-img" />
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-5">
+      <h1 class="mb-4">{{ c.title }}</h1>
+
+      <section class="mb-5">
+        <h2 class="h4 mb-3">Resumen</h2>
+        <p>{{ c.summary }}</p>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="h4 mb-3">Requisitos para matricularse</h2>
+        <ul class="list-group list-group-flush">
+          @for (req of c.requirements; track req.text) {
+            <li class="list-group-item bg-transparent d-flex align-items-start gap-2 px-0">
+              <i class="fa-solid fa-check text-primary mt-1"></i>
+              <span>
+                {{ req.text }}
+                @if (req.link) {
+                  <a [href]="req.link" target="_blank" rel="noopener noreferrer" class="ms-1">
+                    <i class="fa-solid fa-file-arrow-down"></i> Descargar
+                  </a>
+                }
+              </span>
+            </li>
+          }
+        </ul>
+      </section>
+
+      <section>
+        <a
+        [href]="c.pdfUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-outline-primary d-inline-flex align-items-center gap-2"
+        >
+        <i class="fa-solid fa-file-pdf fa-lg"></i>
+        Descargar información completa (PDF)
+        </a>
+      </section>
+    </div>
+
+  </div>
+} @else {
+  <div class="error-state d-flex flex-column align-items-center justify-content-center text-center py-5">
+    <i class="fa-solid fa-map-signs error-icon mb-3"></i>
+    <h1 class="h3 mb-2">No encontramos esta carrera</h1>
+    <p class="text-muted mb-4">Puede que el enlace esté mal escrito o que la carrera ya no esté disponible.</p>
+    <a routerLink="/inicio" class="btn btn-primary">Volver al inicio</a>
+  </div>
+}

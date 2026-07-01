@@ -1,0 +1,15 @@
+.hero-img {
+  display: block;
+  max-height: 480px;
+  object-fit: cover;
+}
+
+.error-state {
+  min-height: 60vh;
+  color: var(--text-main);
+}
+
+.error-icon {
+  font-size: 3rem;
+  color: var(--primary);
+}
