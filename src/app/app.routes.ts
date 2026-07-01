@@ -24,6 +24,10 @@ export const routes: Routes = [
           import('./pages/noticias/noticias-list/noticias-list').then((m) => m.NoticiasList),
       },
       {
+        path: 'contacto',
+        loadComponent: () => import('./pages/contacto/contacto').then((m) => m.ContactoPage),
+      },
+      {
         path: 'noticias/:id',
         loadComponent: () =>
           import('./pages/noticias/noticias-detalle/noticias-detalle').then(
